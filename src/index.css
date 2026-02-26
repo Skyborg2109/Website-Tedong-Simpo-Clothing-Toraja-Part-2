@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --color-dark: #111111;
+  --color-black: #080808;
+  --color-red: #A31D1D;
+  --color-maroon: #680C0C;
+  --color-gold: #D4AF37;
+  --color-yellow: #F0C929;
+  --color-white: #F8F9FA;
+  --color-gray: #e0e0e0;
+  
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  
+  --radius: 8px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Base App Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Toraja Pattern Lines */
+.pattern-border {
+  height: 6px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-maroon),
+    var(--color-maroon) 10px,
+    var(--color-gold) 10px,
+    var(--color-gold) 20px,
+    var(--color-dark) 20px,
+    var(--color-dark) 30px
+  );
+}
+
+/* Specific Utilities */
+.text-gold { color: var(--color-gold) !important; }
+.text-red { color: var(--color-red) !important; }
+.text-center { text-align: center; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(163, 29, 29, 0.4);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-maroon);
+  z-index: -1;
+  transition: var(--transition);
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.btn-primary:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; opacity: 0; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; }

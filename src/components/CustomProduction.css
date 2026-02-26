@@ -1,0 +1,137 @@
+.custom-section {
+    padding: 100px 20px;
+    background-color: var(--color-dark);
+    background-image: linear-gradient(rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.9)), url('/custom baju.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background pattern */
+.custom-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image:
+        linear-gradient(45deg, var(--color-maroon) 25%, transparent 25%, transparent 75%, var(--color-maroon) 75%, var(--color-maroon)),
+        linear-gradient(45deg, var(--color-maroon) 25%, transparent 25%, transparent 75%, var(--color-maroon) 75%, var(--color-maroon));
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-content {
+    flex: 1;
+}
+
+.custom-description {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.title-separator-left {
+    height: 3px;
+    width: 60px;
+    background-color: var(--color-gold);
+    margin: 20px 0 30px;
+    position: relative;
+}
+
+.custom-features {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.custom-features li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: var(--color-white);
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+.custom-steps {
+    flex: 1;
+    display: grid;
+    gap: 30px;
+}
+
+.step-card {
+    background: rgba(8, 8, 8, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 30px;
+    border-radius: var(--radius);
+    position: relative;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+.step-card:hover {
+    transform: translateX(-10px);
+    border-color: var(--color-gold);
+    background: rgba(8, 8, 8, 0.9);
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.step-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.step-card:hover .step-number {
+    color: rgba(212, 175, 55, 0.3);
+}
+
+.step-icon {
+    margin-bottom: 20px;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.step-desc {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .custom-container {
+        flex-direction: column;
+    }
+}

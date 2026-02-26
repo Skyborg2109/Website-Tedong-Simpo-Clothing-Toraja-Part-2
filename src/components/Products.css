@@ -1,0 +1,183 @@
+.products-section {
+    padding: 100px 20px;
+    background-color: var(--color-black);
+    background-image: linear-gradient(rgba(17, 17, 17, 0.95), rgba(17, 17, 17, 0.95)), url('/Motif_Tator_25.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    color: var(--color-red);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--color-white);
+    line-height: 1.2;
+}
+
+.title-separator {
+    height: 3px;
+    width: 60px;
+    background-color: var(--color-gold);
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.title-separator::before,
+.title-separator::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--color-maroon);
+    border-radius: 50%;
+}
+
+.title-separator::before {
+    left: -15px;
+}
+
+.title-separator::after {
+    right: -15px;
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--color-dark);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.product-image-container {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-actions {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.product-card:hover .product-actions {
+    bottom: 0;
+    opacity: 1;
+}
+
+.icon-btn {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.icon-btn:hover {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+.product-price {
+    color: var(--color-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .product-image-container {
+        height: 300px;
+    }
+}
